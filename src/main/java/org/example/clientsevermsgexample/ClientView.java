@@ -24,7 +24,7 @@ public class ClientView {
     private VBox clientvbox_messages; // Messages sent by client
 
     @FXML
-    private VBox servervbox_messages; // Messages received from server
+    private VBox servervbox_messages; // Messages received from server shows no usage I'm not sure
 
     private Socket socket;
     private DataInputStream dis;

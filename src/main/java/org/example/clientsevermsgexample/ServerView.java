@@ -15,7 +15,7 @@ import java.net.Socket;
 public class ServerView {
 
     @FXML
-    private VBox clientvbox_messages; // Messages received from client
+    private VBox clientvbox_messages; // Messages received from client shows no usage i'm not sure
 
     @FXML
     private VBox servervbox_messages; // Messages sent by server
@@ -32,7 +32,7 @@ public class ServerView {
         new Thread(this::startServer).start();
 
         serverbutton_send.setOnAction(event -> {
-            String message = "This is a server message"; // Change as per your need
+            String message = " server message";
             sendMessageToClient(message);  // Send message to client
         });
     }
