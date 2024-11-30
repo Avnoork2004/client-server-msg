@@ -27,6 +27,13 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox dropdownPort;
 
+    @FXML
+    private Button user1_client;
+
+    @FXML
+    private Button user2_server;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dropdownPort.getItems().addAll("7",     // ping
@@ -38,6 +45,22 @@ public class MainController implements Initializable {
                 "119",     // nntp (news)
                 "161"      // snmp);
         );
+
+        user1_client.setOnAction(event -> openNewView("client-view.fxml", "Client View"));
+        user2_server.setOnAction(event -> openNewView("server-view.fxml", "Server View"));
+    }
+
+    private void openNewView(String fxmlFile, String title) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Scene newScene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(newScene);
+            stage.setTitle(title);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
